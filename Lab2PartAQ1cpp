@@ -1,18 +1,28 @@
 #include <iostream>
 using namespace std;
-
-void RecursiveReverseDisplayNumber(int num1, int num2) {}
-int RecursiveCalSum(int num1, int num2) {}
+int product(int A, int B); //prototype
 int main() {
-    int startvalue, endvalue;
-    cout << "enter a start value: ";
-    cin >> startvalue;
-    cout << "enter an end value: ";
-    cin >> endvalue;
-    cout << endl;
-    cout << RecursiveCalSum(startvalue, endvalue) << endl;
-    return 0;
+    int A, B;
+
+    cout << "Enter two integers: ";
+    cin >> A >> B;
+    product(A, B);
 }
+
+int product(int A, int B) {
+    if (A == 0 || B == 0) {
+        return 0;
+    } else if (A > 0 && B > 0) {
+        return A + product(A, B - 1);
+    } else if (A < 0 && B < 0) {
+        return -A + product(-A, B + 1);
+    } else if (A < 0 && B > 0) {
+        return -A + product(-A, B - 1);
+    } else if (A > 0 && B < 0) {
+        return -A + product(A, B + 1);
+    }
+}
+
 
 //
 // A * B =
