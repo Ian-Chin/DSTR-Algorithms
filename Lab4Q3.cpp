@@ -5,9 +5,7 @@ using namespace std;
 
 class population {
 private:
-    int totalPopulation;
-    int numberOfBirths;
-    int numberOfDeaths;
+    int totalPopulation, numberOfBirths, numberOfDeaths;
 
 public:
     population();
@@ -71,8 +69,6 @@ double population::getDeathRate() {
 int main() {
     population town;
     int value;
-
-    // input validation : population must be at least 1
     do {
         cout << "Enter the population : ";
         cin >> value;
